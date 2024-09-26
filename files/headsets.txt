@@ -1,0 +1,53 @@
+Swift Vision
+Colors: Red, Orange
+Price: $699.99
+Description: The Swift Vision offers a gateway to immersive AR experiences. With high-definition displays and intuitive controls, it brings your digital content to life.
+Ideal for everyday use, this model combines affordability with functionality, making it a great choice for new AR enthusiasts.
+Tags: Virtual Reality, Productivity, Augmented Reality
+
+Swift Vision Pro
+Colors: Red, Orange
+Price: $899.99
+Description: Experience cutting-edge augmented reality with the Swift Vision Pro. Featuring a sleek design and advanced optics, this device provides crystal-clear visuals and seamless integration with your digital world.
+The Pro version includes enhanced processing power and extended battery life, perfect for both professional and entertainment purposes.
+Tags: Virtual Reality, Productivity, Augmented Reality
+
+Aqua Gaze
+Colors: Red, Orange
+Price: $899.99
+Description: Aqua Gaze glasses lead Augmented Reality innovation. With advanced eye-tracking and customizable interfaces, these glasses adapt seamlessly to your creative, collaborative, or consumption needs.
+Tags: Innovation, Eye-tracking, Customizable
+
+Aqua Gaze Pro
+Colors: Red, Orange
+Price: $1,099.99
+Description: Explore the depths of augmented reality with the Aqua Gaze Pro. Featuring waterproof construction and advanced optical technology, this device is perfect for water-based environments.
+Whether you're diving, swimming, or exploring wet terrains, the Aqua Gaze Pro delivers exceptional performance and clarity.
+Tags: Innovation, Eye-tracking, Customizable
+
+Mind Lens
+Colors: Red, Orange
+Price: $749.99
+Description: Step into virtual worlds with the Mind Lens. Designed for comfort and ease of use, it provides an excellent introduction to VR. With its clear visuals and responsive controls, this device is perfect for casual VR experiences and light gaming.
+Tags: Outdoor Adventure, Urban Exploration, Mapping
+
+Mind Lens Pro
+Colors: Red, Orange
+Price: $949.99
+Description: Unlock the full potential of virtual reality with the Mind Lens Pro. This premium device offers ultra-high resolution displays, spatial audio, and precise tracking, creating a deeply immersive VR environment.
+Ideal for gaming, training, and simulation, the Pro version ensures an unparalleled experience.
+Tags: Outdoor Adventure, Urban Exploration, Mapping
+
+Terra Turtle
+Colors: Red, Orange
+Price: $649.99
+Description: The Terra Turtle provides a reliable AR experience with robust construction and user-friendly features. Its versatile design makes it suitable for a variety of applications, from education to industrial use.
+Enjoy dependable performance and immersive visuals with this solid choice.
+Tags: Durability, Outdoor, AR Features
+
+Terra Turtle Pro
+Colors: Red, Orange
+Price: $849.99
+Description: Dive into mixed reality with the Terra Turtle Pro. Known for its durability and high performance, this device is perfect for both indoor and outdoor use.
+The Pro version comes equipped with advanced sensors and a powerful processor, ensuring smooth and responsive interactions.
+Tags: Durability, Outdoor, AR Features
