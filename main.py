@@ -254,7 +254,7 @@ def inspect_audio_file(file_path):
 # TRANSCRIPTION TO ELEVENLABS FOR AUDIO
 def eleven_labs_api(text):
     str(text)
-    
+   
     voice_id= "XrExE9yKIg1WjnnlVkGX"
     CHUNK_SIZE = 1024
     model_id = "eleven_turbo_v2"
@@ -271,26 +271,21 @@ def eleven_labs_api(text):
         }
         response = requests.post(url=url_eleven_labs, json=payload, headers=headers)
     except Exception as e:
-        print(f"ERROR IN ELEVEN LABS API: {e}") 
+        print(f"ERROR IN ELEVEN LABS API: {e}")
         return
-    
-    audio_bytes = b"" 
-    with open('output.mp3', 'wb') as f:
-        for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-            if chunk:
-                f.write(chunk)
-                audio_bytes += chunk
-                
-    # with open('output.wav', 'wb') as f:
-    #     for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-    #         if chunk:
-    #             f.write(chunk)
-
-    # mp3_file = AudioSegment.from_file("output.mp3", format="mp3")
-    # wav_file = mp3_file.set_frame_rate(44100).set_channels(1)
-    # wav_file.export("output.wav", format="wav")
-    
-    return str(audio_bytes)
+   
+    pcm_data = response.content
+    print(f'from eleven labs {type(pcm_data)}')
+ 
+    # Convert PCM data to an unsigned 8-bit bytes array
+    # Assuming the received PCM data is in 16-bit format, we'll scale it to 8-bit.
+    pcm_array = np.frombuffer(pcm_data, dtype=np.int16)  # Convert PCM bytes to int16
+    pcm_8bit_unsigned = ((pcm_array.astype(np.int32) + 32768) // 256).astype(np.uint8)
+    print(f'{type(pcm_8bit_unsigned)}' )
+    raw_bytes = pcm_8bit_unsigned.tobytes()
+    print(f'{type(raw_bytes)}' )
+   
+    return pcm_data
 
 
 @app.get("/product_list")
