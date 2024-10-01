@@ -46,96 +46,96 @@ a2f_player_regular = "/World/audio2face/Player"
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # A2F API VARIABLES
-    # file_path = r"D:\Unreal_Server\mark_regular.usd"
-    # a2f_current_audio_files_folder = "D:/Unreal_Server/"
-    # url_load = 'http://172.16.15.209:8011/A2F/USD/Load'
-    # url_activatestreamlivelink = 'http://172.16.15.209:8011/A2F/Exporter/ActivateStreamLivelink'
-    # url_a2e_streaming = 'http://172.16.15.209:8011/A2F/A2E/EnableStreaming'
-    # url_a2e_autogen_onchange = 'http://172.16.15.209:8011/A2F/A2E/EnableAutoGenerateOnTrackChange'
-    # url_set_track_loop = 'http://172.16.15.209:8011/A2F/Player/SetLooping'
-    # url_get_current_track = 'http://172.16.15.209:8011/A2F/Player/GetCurrentTrack'
-    # url_set_current_track = 'http://172.16.15.209:8011/A2F/Player/SetTrack'
-    # url_get_root_path = 'http://172.16.15.209:8011/A2F/Player/GetRootPath'
-    # url_set_root_path = 'http://172.16.15.209:8011/A2F/Player/SetRootPath'
-    # url_setstreamlivelinksettings = 'http://172.16.15.209:8011/A2F/Exporter/SetStreamLivelinkSettings'
-    # url_get_tracks = 'http://172.16.15.209:8011/A2F/Player/GetTracks'
+    file_path = r"D:\Unreal_Server\mark_regular.usd"
+    a2f_current_audio_files_folder = "D:/Unreal_Server/"
+    url_load = 'http://172.16.15.209:8011/A2F/USD/Load'
+    url_activatestreamlivelink = 'http://172.16.15.209:8011/A2F/Exporter/ActivateStreamLivelink'
+    url_a2e_streaming = 'http://172.16.15.209:8011/A2F/A2E/EnableStreaming'
+    url_a2e_autogen_onchange = 'http://172.16.15.209:8011/A2F/A2E/EnableAutoGenerateOnTrackChange'
+    url_set_track_loop = 'http://172.16.15.209:8011/A2F/Player/SetLooping'
+    url_get_current_track = 'http://172.16.15.209:8011/A2F/Player/GetCurrentTrack'
+    url_set_current_track = 'http://172.16.15.209:8011/A2F/Player/SetTrack'
+    url_get_root_path = 'http://172.16.15.209:8011/A2F/Player/GetRootPath'
+    url_set_root_path = 'http://172.16.15.209:8011/A2F/Player/SetRootPath'
+    url_setstreamlivelinksettings = 'http://172.16.15.209:8011/A2F/Exporter/SetStreamLivelinkSettings'
+    url_get_tracks = 'http://172.16.15.209:8011/A2F/Player/GetTracks'
     
-    # # LOADING A2F MODEL
-    # body_load_usd = {
-    # 'file_name': file_path
-    # }
-    # response_load = requests.post(url=url_load , json=body_load_usd)
-    # print(f"BOOT LOAD: {response_load.json()}")
+    # LOADING A2F MODEL
+    body_load_usd = {
+    'file_name': file_path
+    }
+    response_load = requests.post(url=url_load , json=body_load_usd)
+    print(f"BOOT LOAD: {response_load.json()}")
     
-    # #set root path for audio files
-    # body_root_path = {
-    #     "a2f_player": a2f_player_regular,
-    #     "dir_path" : a2f_current_audio_files_folder
-    # }
-    # response_root_path = requests.post(url=url_set_root_path , json=body_root_path)
-    # print(f"ROOT PATH SET: {response_root_path.json()}")
+    #set root path for audio files
+    body_root_path = {
+        "a2f_player": a2f_player_regular,
+        "dir_path" : a2f_current_audio_files_folder
+    }
+    response_root_path = requests.post(url=url_set_root_path , json=body_root_path)
+    print(f"ROOT PATH SET: {response_root_path.json()}")
     
-    # #get tracks in root path
-    # body_get_tracks = {
-    #     "a2f_player": a2f_player_regular
-    # }
-    # response_tracks = requests.post(url=url_get_tracks , json=body_get_tracks)
-    # print(f"TRACKS LIST: {response_tracks.json()}")
+    #get tracks in root path
+    body_get_tracks = {
+        "a2f_player": a2f_player_regular
+    }
+    response_tracks = requests.post(url=url_get_tracks , json=body_get_tracks)
+    print(f"TRACKS LIST: {response_tracks.json()}")
     
-    # #set track
-    # body_set_track = {
-    #     "a2f_player": a2f_player_regular,
-    #     "file_name": 'output.wav',
-    #     "time_range": [
-    #          0,
-    #         -1
-    #     ]
-    # }
+    #set track
+    body_set_track = {
+        "a2f_player": a2f_player_regular,
+        "file_name": 'output.wav',
+        "time_range": [
+             0,
+            -1
+        ]
+    }
     
-    # response_set_track = requests.post(url=url_set_current_track , json=body_set_track)
-    # print(f"BODY SET TRACK: {response_set_track.json()}")
+    response_set_track = requests.post(url=url_set_current_track , json=body_set_track)
+    print(f"BODY SET TRACK: {response_set_track.json()}")
     
-    # #set track loop to false
-    # body_set_track_loop = {
-    #     "a2f_player": a2f_player_regular,
-    #     "loop_audio": False
-    # }
-    # response_tracks_loop = requests.post(url=url_set_track_loop , json=body_set_track_loop)
-    # print(f"TRACKS LOOP {response_tracks_loop.json()}")
-    
-    
-    # #set live link settings
-    # body_live_ink_settings = {
-    # "node_path": StreamLiveLink,
-    # "values": {"enable_audio_stream": True ,  "livelink_host": '172.16.15.207'  , "enable_gaze": False , "enable_idle_head": False }
-    # }
-    # response_live_link_settings = requests.post(url=url_setstreamlivelinksettings , json=body_live_ink_settings)
-    # print(f"LIVELINK SETTING {response_live_link_settings.json()}")
-    
-    # #enablae A2E auto gen on track change
-    # body_a2e_auto_gen = {
-    # "a2f_instance": instance ,
-    # "enable": True 
-    # }
-    # response_a2e_auto_gen = requests.post(url=url_a2e_autogen_onchange , json=body_a2e_auto_gen)
-    # print(F"EANBLE A2E AURO GEN ON CHANGE {response_a2e_auto_gen.json()}")
-    
-    # #enable A2E streaming
-    # body_a2e_stream = {
-    # "a2f_instance": instance ,
-    # "enable": True 
-    # }
-    # response = requests.post(url=url_a2e_streaming , json=body_a2e_stream)
-    # print(F"ENABLE A2E STREAMING {response.json()}")
+    #set track loop to false
+    body_set_track_loop = {
+        "a2f_player": a2f_player_regular,
+        "loop_audio": False
+    }
+    response_tracks_loop = requests.post(url=url_set_track_loop , json=body_set_track_loop)
+    print(f"TRACKS LOOP {response_tracks_loop.json()}")
     
     
-    # #activate live link
-    # body_activate_live_link = {
-    # "node_path": StreamLiveLink ,
-    # "value": True
-    # }
-    # response_activate_live_link = requests.post(url=url_activatestreamlivelink , json=body_activate_live_link)
-    # print(f"ACTIVATE STREAMLINK {response_activate_live_link.json()}")
+    #set live link settings
+    body_live_ink_settings = {
+    "node_path": StreamLiveLink,
+    "values": {"enable_audio_stream": True ,  "livelink_host": '172.16.15.207'  , "enable_gaze": False , "enable_idle_head": False }
+    }
+    response_live_link_settings = requests.post(url=url_setstreamlivelinksettings , json=body_live_ink_settings)
+    print(f"LIVELINK SETTING {response_live_link_settings.json()}")
+    
+    #enablae A2E auto gen on track change
+    body_a2e_auto_gen = {
+    "a2f_instance": instance ,
+    "enable": True 
+    }
+    response_a2e_auto_gen = requests.post(url=url_a2e_autogen_onchange , json=body_a2e_auto_gen)
+    print(F"EANBLE A2E AURO GEN ON CHANGE {response_a2e_auto_gen.json()}")
+    
+    #enable A2E streaming
+    body_a2e_stream = {
+    "a2f_instance": instance ,
+    "enable": True 
+    }
+    response = requests.post(url=url_a2e_streaming , json=body_a2e_stream)
+    print(F"ENABLE A2E STREAMING {response.json()}")
+    
+    
+    #activate live link
+    body_activate_live_link = {
+    "node_path": StreamLiveLink ,
+    "value": True
+    }
+    response_activate_live_link = requests.post(url=url_activatestreamlivelink , json=body_activate_live_link)
+    print(f"ACTIVATE STREAMLINK {response_activate_live_link.json()}")
     
     yield
 
@@ -244,13 +244,6 @@ async def send_to_rasa(sid, response):
     return rasa_output
 
 
-def inspect_audio_file(file_path):
-    info = mediainfo(file_path)
-    print("AUIDO METADATA")
-    for key, val in info.items():
-        print(f"{key}: {val}")
-
-
 # TRANSCRIPTION TO ELEVENLABS FOR AUDIO
 def eleven_labs_api(text):
     str(text)
@@ -275,8 +268,10 @@ def eleven_labs_api(text):
         return
    
     pcm_data = response.content
-    print(f'from eleven labs {type(pcm_data)}')
- 
+    # print(f'from eleven labs {type(pcm_data)}')
+    
+    if len(pcm_data) % 2 != 0:
+        pcm_data = pcm_data[:-1]
     # Convert PCM data to an unsigned 8-bit bytes array
     # Assuming the received PCM data is in 16-bit format, we'll scale it to 8-bit.
     pcm_array = np.frombuffer(pcm_data, dtype=np.int16)  # Convert PCM bytes to int16
@@ -285,7 +280,7 @@ def eleven_labs_api(text):
     raw_bytes = pcm_8bit_unsigned.tobytes()
     print(f'{type(raw_bytes)}' )
    
-    return pcm_data
+    return raw_bytes
 
 
 @app.get("/product_list")
@@ -384,7 +379,7 @@ async def send_message(sid, data):
                 rasa_text = rasa_response[0]['text']
                 rasa_json = rasa_response[1]['custom']
 
-                eleven_labs_api(rasa_text)
+                audio_bytes = eleven_labs_api(rasa_text)
                 # audio_bytes = eleven_labs_api(rasa_text)
                 # a2f_api_call()
                 # print(convertToAudioAndPlay(rasa_text, 'en-US'))
@@ -394,7 +389,7 @@ async def send_message(sid, data):
                 # print(f"AUDIO BYTES FROM ELEVEN LABS : {audio_bytes}")
                 # SENDING THE REPONSE TO UNREAL
                 await sio.emit('server_response', rasa_json, to=sid)
-                # await sio.emit('audio_bytes', audio_bytes, to=sid)
+                await sio.emit('audio_bytes', audio_bytes, to=sid)
                 print('emitted')
         except Exception as e:
             print(f"Exception Occured Internal : {e}")
